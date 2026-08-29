@@ -54,9 +54,13 @@ function DisclosureItem({ title, items }) {
   return <section><h2 className="font-bold text-ink">{title}</h2><ul className="mt-1 list-disc pl-5">{items.map((item) => <li key={item}>{item}</li>)}</ul></section>;
 }
 
+function PrototypeNotice() {
+  return <p className="relative z-10 border-b-2 border-ink bg-[#fbfcf5] px-5 py-2 font-mono text-[10px] font-bold uppercase leading-4 tracking-wide text-ink">Independent prototype — not an official cybercrime or government department application.</p>;
+}
+
 function Layout({ children }) {
   const { started } = useReport();
-  return <div className="page">{started && <TimerHeader />}{children}<DisclosureFooter /></div>;
+  return <div className="page">{started && <TimerHeader />}<PrototypeNotice />{children}<DisclosureFooter /></div>;
 }
 
 function Landing() {
